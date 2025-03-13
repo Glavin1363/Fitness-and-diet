@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Fitlife - Diet Plans</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .nav-link {
+            font-size: 1.2rem;
+        }
+        .flip-card {
+            background-color: transparent;
+            width: 300px;
+            height: 400px;
+            perspective: 1000px;
+            margin: auto;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 8px;
+        }
+        .flip-card-front {
+            background-color: white;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        .flip-card-back {
+            background-color: #fefefe;
+            color: black;
+            transform: rotateY(180deg);
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Header -->
+    <header class="bg-white text-gray-900 shadow-md">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <div class="flex items-center">
+                <img alt="Fitlife logo" class="mr-2" height="40" src="https://storage.googleapis.com/a1aa/image/4Qd2qcOWD1VnQh1Kqn5fa-r7LnFMPqyEiDcE3_xGoVg.jpg" width="40"/>
+                <span class="text-2xl font-bold text-orange-500">Fitlife</span>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a class="text-orange-500 nav-link" href="home.html">Home</a>
+                <a class="hover:text-orange-500 nav-link" href="about.html">About Us</a>
+                <a class="hover:text-orange-500 nav-link" href="workout_plans.html">Workout</a>
+                <a class="hover:text-orange-500 nav-link" href="diet_plans.html">Diet</a>
+                <a class="hover:text-orange-500 nav-link" href="#blog-feed">Blog</a>
+                <a class="hover:text-orange-500 nav-link" href="#"><i class="fas fa-user"></i></a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-16">
+        <h1 class="text-4xl font-bold text-center mb-8">Diet Plans</h1>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="dietPlansGrid">
+            <!-- Existing Diet Plans -->
+            <!-- Balanced Diet -->
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img alt="Balanced diet with various healthy foods" class="rounded-t-lg" height="200" src="https://storage.googleapis.com/a1aa/image/0vS31MuXYzR5pjqddKGmaWpTDkzH9Zs3_GyVHrM1U-k.jpg" width="300"/>
+                        <h3 class="text-xl font-bold mt-4 text-black">Balanced Diet</h3>
+                        <p class="mt-2 text-black">A well-rounded diet plan.</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3 class="text-xl font-bold">Balanced Diet</h3>
+                        <p>A well-rounded diet plan to meet your nutritional needs, including a variety of food groups.</p>
+                        <p><strong>Duration:</strong> Ongoing</p>
+                        <p><strong>Frequency:</strong> Daily</p>
+                        <p><strong>Key Foods:</strong> Fruits, Vegetables, Whole Grains, Lean Proteins</p>
+                    </div>
+                </div>
+            </div>
+            <!-- High-Protein Diet -->
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img alt="High-protein foods for muscle building" class="rounded-t-lg" height="200" src="https://storage.googleapis.com/a1aa/image/cmmTmpycmUQdh1tcN3McD37vyZsT1ULD8s7fV26I2Nk.jpg" width="300"/>
+                        <h3 class="text-xl font-bold mt-4 text-black">High-Protein Diet</h3>
+                        <p class="mt-2 text-black">Increase muscle mass.</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3 class="text-xl font-bold">High-Protein Diet</h3>
+                        <p>Increase muscle mass with our high-protein meal plans, focusing on protein-rich foods.</p>
+                        <p><strong>Duration:</strong> 6 weeks</p>
+                        <p><strong>Frequency:</strong> Daily</p>
+                        <p><strong>Key Foods:</strong> Chicken, Fish, Eggs, Legumes</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Low-Carb Diet -->
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img alt="Low-carb foods for weight loss" class="rounded-t-lg" height="200" src="https://storage.googleapis.com/a1aa/image/TUfDxmkgX1RXSsjLB-dR58kka8Jrt-5T35RnEdndz50.jpg" width="300"/>
+                        <h3 class="text-xl font-bold mt-4 text-black">Low-Carb Diet</h3>
+                        <p class="mt-2 text-black">Designed for weight loss.</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3 class="text-xl font-bold">Low-Carb Diet</h3>
+                        <p>A diet plan designed to help you lose weight effectively by reducing carbohydrate intake.</p>
+                        <p><strong>Duration:</strong> 4 weeks</p>
+                        <p><strong>Frequency:</strong> Daily</p>
+                        <p><strong>Key Foods:</strong> Meat, Fish, Eggs, Non-starchy Vegetables</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Vegan Diet -->
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img alt="Vegan foods for a plant-based diet" class="rounded-t-lg" height="200" src="https://storage.googleapis.com/a1aa/image/Zh0r-b5FjW8qxgK6AMN-8JsmR1AJjDuoIUuv0j0-pSA.jpg" width="300"/>
+                        <h3 class="text-xl font-bold mt-4 text-black">Vegan Diet</h3>
+                        <p class="mt-2 text-black">Plant-based for health.</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3 class="text-xl font-bold">Vegan Diet</h3>
+                        <p>A plant-based diet plan for health and sustainability, focusing on whole foods.</p>
+                        <p><strong>Duration:</strong> Ongoing</p>
+                        <p><strong>Frequency:</strong> Daily</p>
+                        <p><strong>Key Foods:</strong> Fruits, Vegetables, Nuts, Seeds, Legumes</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Mediterranean Diet -->
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img alt="Mediterranean foods for a heart-healthy diet" class="rounded-t-lg" height="200" src="https://storage.googleapis.com/a1aa/image/eDbmBkua6iL_lS7_jFH0sPh4240xMPFY435HHLdrYLw.jpg" width="300"/>
+                        <h3 class="text-xl font-bold mt-4 text-black">Mediterranean Diet</h3>
+                        <p class="mt-2 text-black">Heart-healthy and delicious.</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3 class="text-xl font-bold">Mediterranean Diet</h3>
+                        <p>A heart-healthy diet rich in fruits, vegetables, and healthy fats, promoting overall wellness.</p>
+                        <p><strong>Duration:</strong> Ongoing</p>
+                        <p><strong>Frequency:</strong> Daily</p>
+                        <p><strong>Key Foods:</strong> Olive Oil, Fish, Whole Grains, Nuts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <button class="bg-orange-500 text-white px-6 py-2 rounded-md" onclick="window.location.href='custom_diet.html'">Create Custom Diet</button>
+        </div>
+
+        <!-- Custom Meal Plan Section -->
+        <div class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">Generated Meal Plan</h2>
+            <div id="generatedMealPlan" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+            <div id="mealPlan" class="bg-gray-800 p-4 rounded-lg mt-4">
+                <p class="text-gray-400">No meal plan generated yet.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- About Section -->
+            <div>
+                <h2 class="text-2xl font-bold mb-4">Fitlife</h2>
+                <p class="text-gray-400 mb-4">Your partner in achieving fitness goals.</p>
+                <p class="text-gray-400">Monday - Friday<br/>7:00am - 10:00pm</p>
+                <p class="text-gray-400">Saturday - Sunday<br/>7:00am - 2:00pm</p>
+            </div>
+            <!-- Links Section -->
+            <div>
+                <h2 class="text-xl font-bold mb-4">Our Links</h2>
+                <ul class="space-y-2">
+                    <li><a class="text-gray-400" href="home.html">Home</a></li>
+                    <li><a class="text-gray-400" href="about.html">About Us</a></li>
+                    <li><a class="text-gray-400" href="workout_plans.html">Workout</a></li>
+                    <li><a class="text-gray-400" href="diet_plans.html">Diet</a></li>
+                    <li><a class="text-gray-400" href="#blog-feed">Blog</a></li>
+                </ul>
+            </div>
+            <!-- Contact Section -->
+            <div>
+                <h2 class="text-xl font-bold mb-4">Contact Us</h2>
+                <p class="text-gray-400">1247/Plot No. 39, 15th Phase, Colony, Kukatpally, Hyderabad</p>
+                <p class="text-gray-400">1900-123-4567<br/>+91 555 234 8765</p>
+                <p class="text-gray-400">info@fitlife.com<br/>services@fitlife.com</p>
+            </div>
+            <!-- Newsletter Section -->
+            <div>
+                <h2 class="text-xl font-bold mb-4">Our Newsletter</h2>
+                <form>
+                    <input class="w-full p-2 mb-4 rounded bg-gray-800 text-white" placeholder="Email Address" type="email"/>
+                    <button class="w-full bg-orange-500 text-white p-2 rounded" type="submit">Subscribe</button>
+                </form>
+                <div class="flex space-x-4 mt-4">
+                    <a class="text-gray-400" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="text-gray-400" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="text-gray-400" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="fixed bottom-4 right-4">
+        <button id="scrollToTop" class="bg-orange-500 text-white p-4 rounded-full shadow-lg">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            loadSavedMealPlans();
+        });
+
+        // Load and display saved meal plans
+        function loadSavedMealPlans() {
+            const savedMealPlansDiv = document.getElementById("generatedMealPlan");
+            savedMealPlansDiv.innerHTML = "";
+
+            const savedPlans = localStorage.getItem("savedMealPlans");
+            if (savedPlans) {
+                savedMealPlansDiv.innerHTML = savedPlans;
+            } else {
+                savedMealPlansDiv.innerHTML = "<p class='text-gray-400'>No saved meal plans found.</p>";
+            }
+        }
+
+        // Delete meal plan
+        function deleteMealPlan(index) {
+            const savedPlans = JSON.parse(localStorage.getItem("savedMealPlans")) || [];
+            savedPlans.splice(index, 1);
+            localStorage.setItem("savedMealPlans", JSON.stringify(savedPlans));
+            loadSavedMealPlans();
+        }
+    </script>
+</body>
+</html>

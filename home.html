@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Fitlife</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+        }
+        .scroll-container > div {
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+        }
+        .scroll-container::-webkit-scrollbar {
+            height: 8px; /* Height of the scrollbar */
+        }
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: #888; /* Color of the scrollbar */
+            border-radius: 10px; /* Roundness of the scrollbar */
+        }
+        .scroll-container::-webkit-scrollbar-thumb:hover {
+            background: #555; /* Color of the scrollbar on hover */
+        }
+        .scroll-container {
+            -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+            scrollbar-width: thin; /* Hide scrollbar for Firefox */
+        }
+        /* Sticky Navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        /* Increase font size of nav links */
+        .nav-link {
+            font-size: 1.2rem; /* Adjust as needed */
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Header -->
+    <header class="bg-white text-gray-900 shadow-md navbar">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <div class="flex items-center">
+                <img alt="Fitlife logo" class="mr-2" height="40" src="https://storage.googleapis.com/a1aa/image/4Qd2qcOWD1VnQh1Kqn5fa-r7LnFMPqyEiDcE3_xGoVg.jpg" width="40"/>
+                <span class="text-2xl font-bold text-orange-500">Fitlife</span>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a class="text-orange-500 nav-link" href="home.html">Home</a>
+                <a class="hover:text-orange-500 nav-link" href="#about-us">About Us</a>
+                <a class="hover:text-orange-500 nav-link" href="workout_plans.html">Workout</a>
+                <a class="hover:text-orange-500 nav-link" href="diet_plans.html">Diet</a>
+                <a class="hover:text-orange-500 nav-link" href="#blog-feed">Blog</a>
+                <a class="hover:text-orange-500 nav-link" href="#"><i class="fas fa-user"></i></a> <!-- Profile Icon -->
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="flex flex-col md:flex-row items-center justify-between p-6 md:p-12">
+            <div class="text-center md:text-left md:w-1/2">
+                <div class="flex items-center justify-center md:justify-start mb-4">
+                    <span class="bg-orange-500 text-white px-3 py-1 rounded-full mr-2">THE BEST</span>
+                    <span class="bg-gray-700 text-white px-3 py-1 rounded-full">FITNESS CLUB</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Work Hard To Get Better Life</h1>
+                <p class="text-gray-400 mb-6">Join us to achieve your fitness goals and lead a healthier lifestyle.</p>
+                <button class="bg-orange-500 text-white px-6 py-3 rounded-full">GET STARTED</button>
+            </div>
+            <div class="relative md:w-1/2 mt-6 md:mt-0">
+                <img alt="Man lifting weights in a gym" class="w-full" height="400" src="https://storage.googleapis.com/a1aa/image/Tl-HJAx9novYGbn1YdqOi9AiY1-gIqzU1vJ6H06r3J0.jpg" width="600"/>
+                <div class="absolute top-1/4 right-0 bg-gray-800 p-4 rounded-lg flex items-center space-x-2">
+                    <i class="fas fa-heart text-red-500"></i>
+                    <div>
+                        <p class="text-gray-400">Heart Rate</p>
+                        <p class="text-white font-bold">100 bpm</p>
+                    </div>
+                </div>
+                <div class="absolute bottom-1/4 left-0 bg-gray-800 p-4 rounded-lg flex items-center space-x-2">
+                    <i class="fas fa-fire text-orange-500"></i>
+                    <div>
+                        <p class="text-gray-400">Calories Burned</p>
+                        <p class="text-white font-bold">100 kcal</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about-us" class="flex flex-col md:flex-row items-center justify-between p-8 md:p-16 bg-white text-gray-800">
+            <div class="relative w-full md:w-1/2">
+                <img alt="Man in fitness attire" class="w-full h-auto" height="500" src="https://storage.googleapis.com/a1aa/image/3V4RZ-ELFxARj0dJLgfwiM7sLRPLevmGINXD6y1Wj0k.jpg" width="500"/>
+                <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center"></div>
+            </div>
+            <div class="w-full md:w-1/2 mt-8 md:mt-0 md:ml-8">
+                <div class="bg-orange-100 text-orange-500 px-4 py-2 inline-block rounded-md mb-4">ABOUT US</div>
+                <h1 class="text-4xl font-bold mb-4">Welcome To Our Fitness Gym</h1>
+                <p class="text-gray-600 mb-4">We are dedicated to helping you achieve your fitness goals with personalized training and nutrition plans.</p>
+                <p class="text-gray-600 mb-4">Our experienced trainers are here to guide you every step of the way.</p>
+                <div class="flex items-center mt-4">
+                    <img alt="Coach Denis Robinson" class="rounded-full mr-4" height="50" src="https://storage.googleapis.com/a1aa/image/biDDzjR55H3B7WuwmTGzv-WHlXBtwAH9TpC8VHOV_Lw.jpg" width="50"/>
+                    <div>
+                        <div class="font-bold">Denis Robinson</div>
+                        <div class="text-gray-600">Our Coach</div>
+                    </div>
+                </div>
+                <button class="bg-orange-500 text-white px-6 py-2 rounded-md mt-4">EXPLORE MORE</button>
+            </div>
+        </section>
+
+        <!-- Workout Section -->
+        <section class="bg-gray-200 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-8">Workout Plans</h2>
+                <div class="scroll-container">
+                    <div class="bg-white shadow-md rounded-lg p-4 w-80 mx-2">
+                        <img alt="Strength Training with dumbbells" class="rounded-t-lg" height="200" src="https://storage.googleapis.com/a1aa/image/UZffqlhgIUV7MXwWE1p1CtwBRtIbSgsQ9unf0XCOhf0.jpg" width="300"/>
+                        <h3 class="text-xl font-bold mt-4 text-black">Strength Training</h3>
+                        <p class="mt-2 text-black">Build muscle and strength with our comprehensive strength training program.</p>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600">View Plan</button>
+                    </div>
+                    <div class="bg-white shadow-md rounded-lg p-4 w-80 mx-2">
+                        <img alt="Cardio Workouts" class="rounded-t-lg" height="200" src="https://storage.googleapis.com/a1aa/image/nc0weJ7kLLJfUJOgpd5UtwKDkYTeO0Tra7tQVk35R2A.jpg" width="300"/>
+                        <h3 class="text-xl font-bold mt-4 text-black">Cardio Workouts</h3>
+                        <p class="mt-2 text-black">Enhance your endurance and burn calories with our cardio workouts.</p>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600">View Plan</button>
+                    </div>
+                    <div class="bg-white shadow-md rounded-lg p-4 w-80 mx-2">
+                        <img alt="Flexibility Training" class="rounded-t-lg" height="200" src="https://storage.googleapis.com/a1aa/image/kZntse-0Z-G2SH3QgNKMxZ_EoQ529wnlWngghDRZqU0.jpg" width="300"/>
+                        <h3 class="text-xl font-bold mt-4 text-black">Flexibility Training</h3>
+                        <p class="mt-2 text-black">Improve your flexibility and mobility with our targeted training sessions.</p>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600">View Plan</button>
+                    </div>
+                    <div class="bg-white shadow-md rounded-lg p-4 w-80 mx-2">
+                        <img alt="High-Intensity Interval Training" class="rounded-t-lg" height="200" src="https://storage.googleapis.com/a1aa/image/MQq0xA8sGBGMUf8mkhSGGFw9zzXDrAw9-85Hef_68lo.jpg" width="300"/>
+                        <h3 class="text-xl font-bold mt-4 text-black">HIIT Training</h3>
+                        <p class="mt-2 text-black">Maximize your workout efficiency with our high-intensity interval training.</p>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600">View Plan</button>
+                    </div>
+                    <div class="bg-white shadow-md rounded-lg p-4 w-80 mx-2">
+                        <img alt="Yoga and Mindfulness" class="rounded-t-lg" height="200" src="https://storage.googleapis.com/a1aa/image/7KgGY5JbUXU_bZErayTRJLiRPp7QxgY10vbxtPlcPlo.jpg" width="300"/>
+                        <h3 class="text-xl font-bold mt-4 text-black">Yoga and Mindfulness</h3>
+                        <p class="mt-2 text-black">Achieve mental clarity and physical balance with our yoga sessions.</p>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600">View Plan</button>
+                    </div>
+                </div>
+                <button class="bg-orange-500 text-white px-6 py-2 rounded-md mt-4" onclick="window.location.href='workout_plans.html'">EXPAND WORKOUT PLANS</button>
+            </div>
+        </section>
+
+        <!-- Diet Plan Section -->
+        <section class="container mx-auto px-4 py-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Diet Plans</h2>
+            <div class="scroll-container">
+                <div class="bg-white shadow-md rounded-lg p-4 w-80 mx-2">
+                    <img alt="Balanced diet with various healthy foods" class="rounded-t-lg" height="200" src="https://storage.googleapis.com/a1aa/image/0vS31MuXYzR5pjqddKGmaWpTDkzH9Zs3_GyVHrM1U-k.jpg" width="300"/>
+                    <h3 class="text-xl font-bold mt-4 text-black">Balanced Diet</h3>
+                    <p class="mt-2 text-black">A well-rounded diet plan to meet your nutritional needs.</p>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600">View Plan</button>
+                </div>
+                <div class="bg-white shadow-md rounded-lg p-4 w-80 mx-2">
+                    <img alt="High-protein foods for muscle building" class="rounded-t-lg" height="200" src="https://storage.googleapis.com/a1aa/image/cmmTmpycmUQdh1tcN3McD37vyZsT1ULD8s7fV26I2Nk.jpg" width="300"/>
+                    <h3 class="text-xl font-bold mt-4 text-black">High-Protein Diet</h3>
+                    <p class="mt-2 text-black">Increase muscle mass with our high-protein meal plans.</p>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600">View Plan</button>
+                </div>
+                <div class="bg-white shadow-md rounded-lg p-4 w-80 mx-2">
+                    <img alt="Low-carb foods for weight loss" class="rounded-t-lg" height="200" src="https://storage.googleapis.com/a1aa/image/TUfDxmkgX1RXSsjLB-dR58kka8Jrt-5T35RnEdndz50.jpg" width="300"/>
+                    <h3 class="text-xl font-bold mt-4 text-black">Low-Carb Diet</h3>
+                    <p class="mt-2 text-black">A diet plan designed to help you lose weight effectively.</p>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600">View Plan</button>
+                </div>
+                <div class="bg-white shadow-md rounded-lg p-4 w-80 mx-2">
+                    <img alt="Vegan foods for a plant-based diet" class="rounded-t-lg" height="200" src="https://storage.googleapis.com/a1aa/image/Zh0r-b5FjW8qxgK6AMN-8JsmR1AJjDuoIUuv0j0-pSA.jpg" width="300"/>
+                    <h3 class="text-xl font-bold mt-4 text-black">Vegan Diet</h3>
+                    <p class="mt-2 text-black">A plant-based diet plan for health and sustainability.</p>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600">View Plan</button>
+                </div>
+                <div class="bg-white shadow-md rounded-lg p-4 w-80 mx-2">
+                    <img alt="Mediterranean foods for a heart-healthy diet" class="rounded-t-lg" height="200" src="https://storage.googleapis.com/a1aa/image/eDbmBkua6iL_lS7_jFH0sPh4240xMPFY435HHLdrYLw.jpg" width="300"/>
+                    <h3 class="text-xl font-bold mt-4 text-black">Mediterranean Diet</h3>
+                    <p class="mt-2 text-black">A heart-healthy diet rich in fruits, vegetables, and healthy fats.</p>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600">View Plan</button>
+                </div>
+            </div>
+            <button class="bg-orange-500 text-white px-6 py-2 rounded-md mt-4" onclick="window.location.href='diet_plans.html'">EXPAND DIET PLANS</button>
+        </section>
+
+        <!-- Blog Feed Section -->
+        <section id="blog-feed" class="py-16 bg-gray-100 text-gray-900">
+            <div class="container mx-auto text-center">
+                <h2 class="text-orange-500 font-bold mb-4">OUR NEWS</h2>
+                <h1 class="text-4xl font-bold mb-8">Latest Blog Feed</h1>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Blog Post 1 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                        <img alt="Person at the gym for the first time" class="w-full h-48 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/MOLBjRjLLDhgRVisjY-ueW5uurT7DXwIVP1syi2dicM.jpg" width="600"/>
+                        <div class="p-6">
+                            <span class="text-orange-500 font-bold">7 JULY 2022</span>
+                            <h2 class="text-xl font-bold my-4">Going to the gym for the first time</h2>
+                            <p class="text-gray-700 mb-4">A beginner's guide to starting your fitness journey.</p>
+                            <a class="text-orange-500 font-bold" href="#">READ MORE</a>
+                        </div>
+                    </div>
+                    <!-- Blog Post 2 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                        <img alt="Person lifting weights" class="w-full h-48 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/15H2JZgdl-kUtSNgNxKGOU7EbCbCNCFuGKRFFEAG4d0.jpg" width="600"/>
+                        <div class="p-6">
+                            <span class="text-orange-500 font-bold">7 JULY 2022</span>
+                            <h2 class="text-xl font-bold my-4">Parturient accumsan lacus pulvinar magna</h2>
+                            <p class="text-gray-700 mb-4">Tips for effective weight lifting and muscle gain.</p>
+                            <a class="text-orange-500 font-bold" href="#">READ MORE</a>
+                        </div>
+                    </div>
+                    <!-- Blog Post 3 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                        <img alt="Person doing cardio exercises" class="w-full h-48 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/m6VAIom4m8_cn80SW6weQuw93fRGrAoMF_H1OC1qnzA.jpg" width="600"/>
+                        <div class="p-6">
+                            <span class="text-orange-500 font-bold">7 JULY 2022</span>
+                            <h2 class="text-xl font-bold my-4">Risus purus namien parturient accumsan lacus</h2>
+                            <p class="text-gray-700 mb-4">The importance of cardio in your fitness routine.</p>
+                            <a class="text-orange-500 font-bold" href="#">READ MORE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- About Section -->
+            <div>
+                <h2 class="text-2xl font-bold mb-4">Fitlife</h2>
+                <p class="text-gray-400 mb-4">Your partner in achieving fitness goals.</p>
+                <p class="text-gray-400">Monday - Friday<br/>7:00am - 10:00pm</p>
+                <p class="text-gray-400">Saturday - Sunday<br/>7:00am - 2:00pm</p>
+            </div>
+            <!-- Links Section -->
+            <div>
+                <h2 class="text-xl font-bold mb-4">Our Links</h2>
+                <ul class="space-y-2">
+                    <li><a class="text-gray-400" href="home.html">Home</a></li>
+                    <li><a class="text-gray-400" href="about.html">About Us</a></li>
+                    <li><a class="text-gray-400" href="workout_plans.html">Workout</a></li>
+                    <li><a class="text-gray-400" href="diet_plans.html">Diet</a></li>
+                    <li><a class="text-gray-400" href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <!-- Contact Section -->
+            <div>
+                <h2 class="text-xl font-bold mb-4">Contact Us</h2>
+                <p class="text-gray-400">1247/Plot No. 39, 15th Phase, Colony, Kukatpally, Hyderabad</p>
+                <p class="text-gray-400">1900-123-4567<br/>+91 555 234 8765</p>
+                <p class="text-gray-400">info@fitlife.com<br/>services@fitlife.com</p>
+            </div>
+            <!-- Newsletter Section -->
+            <div>
+                <h2 class="text-xl font-bold mb-4">Our Newsletter</h2>
+                <form>
+                    <input class="w-full p-2 mb-4 rounded bg-gray-800 text-white" placeholder="Email Address" type="email"/>
+                    <button class="w-full bg-orange-500 text-white p-2 rounded" type="submit">Subscribe</button>
+                </form>
+                <div class="flex space-x-4 mt-4">
+                    <a class="text-gray-400" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="text-gray-400" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="text-gray-400" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="fixed bottom-4 right-4">
+        <button id="scrollToTop" class="bg-orange-500 text-white p-4 rounded-full shadow-lg">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+
+    <script>
+        const scrollToTopButton = document.getElementById('scrollToTop');
+        scrollToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

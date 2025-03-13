@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Fitlife - Authentication</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen">
+    <div class="bg-gray-800 p-8 rounded-lg shadow-lg w-96">
+        <!-- Login Form -->
+        <div id="loginForm" class="form-section">
+            <h2 class="text-2xl font-bold mb-6 text-center">Login to Fitlife</h2>
+            <form id="loginFormElement">
+                <div class="mb-4">
+                    <label class="block mb-2" for="loginEmail">Email</label>
+                    <input class="w-full p-2 rounded bg-gray-700 text-white" type="email" id="loginEmail" placeholder="Enter your email" required/>
+                </div>
+                <div class="mb-4">
+                    <label class="block mb-2" for="loginPassword">Password</label>
+                    <input class="w-full p-2 rounded bg-gray-700 text-white" type="password" id="loginPassword" placeholder="Enter your password" required/>
+                </div>
+                <button class="bg-orange-500 text-white w-full p-2 rounded" type="submit">Login</button>
+            </form>
+            <div class="mt-4 text-center">
+                <a class="text-gray-400 hover:text-orange-500 cursor-pointer" onclick="showSection('forgotPassword')">Forgot Password?</a>
+            </div>
+            <div class="mt-4 text-center">
+                <p class="text-gray-400">Don't have an account? <a class="text-orange-500 hover:underline cursor-pointer" onclick="showSection('signUpForm')">Sign Up</a></p>
+            </div>
+        </div>
+
+        <!-- Sign Up Form -->
+        <div id="signUpForm" class="form-section hidden">
+            <h2 class="text-2xl font-bold mb-6 text-center">Create an Account</h2>
+            <form id="signUpFormElement">
+                <div class="mb-4">
+                    <label class="block mb-2" for="signUpName">Name</label>
+                    <input class="w-full p-2 rounded bg-gray-700 text-white" type="text" id="signUpName" placeholder="Enter your name" required/>
+                </div>
+                <div class="mb-4">
+                    <label class="block mb-2" for="signUpEmail">Email</label>
+                    <input class="w-full p-2 rounded bg-gray-700 text-white" type="email" id="signUpEmail" placeholder="Enter your email" required/>
+                </div>
+                <div class="mb-4">
+                    <label class="block mb-2" for="signUpPassword">Password</label>
+                    <input class="w-full p-2 rounded bg-gray-700 text-white" type="password" id="signUpPassword" placeholder="Create a password" required/>
+                </div>
+                <button class="bg-orange-500 text-white w-full p-2 rounded" type="submit">Sign Up</button>
+            </form>
+            <div class="mt-4 text-center">
+                <p class="text-gray-400">Already have an account? <a class="text-orange-500 hover:underline cursor-pointer" onclick="showSection('loginForm')">Login</a></p>
+            </div>
+        </div>
+
+        <!-- Forgot Password Form -->
+        <div id="forgotPassword" class="form-section hidden">
+            <h2 class="text-2xl font-bold mb-6 text-center">Reset Password</h2>
+            <form id="resetPasswordForm">
+                <div class="mb-4">
+                    <label class="block mb-2" for="resetEmail">Email</label>
+                    <input class="w-full p-2 rounded bg-gray-700 text-white" type="email" id="resetEmail" placeholder="Enter your email" required/>
+                </div>
+                <button class="bg-orange-500 text-white w-full p-2 rounded" type="submit">Send OTP</button>
+            </form>
+            <div class="mt-4 text-center">
+                <p class="text-gray-400">Remembered your password? <a class="text-orange-500 hover:underline cursor-pointer" onclick="showSection('loginForm')">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to show the selected section
+        function showSection(section) {
+            const sections = ['loginForm', 'signUpForm', 'forgotPassword'];
+            sections.forEach(sec => {
+                document.getElementById(sec).classList.add('hidden');
+            });
+            document.getElementById(section).classList.remove('hidden');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle Sign Up
+            document.getElementById('signUpFormElement').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const name = document.getElementById('signUpName').value;
+                const email = document.getElementById('signUpEmail').value;
+                const password = document.getElementById('signUpPassword').value;
+
+                // Store user data in local storage
+                const userData = { name, email, password };
+                localStorage.setItem(email, JSON.stringify(userData));
+
+                alert('Account created successfully! You can now log in.');
+                showSection('loginForm'); // Change to 'loginForm' to show the login section
+            });
+
+            // Handle Login
+            document.getElementById('loginFormElement').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const email = document.getElementById('loginEmail').value;
+                const password = document.getElementById('loginPassword').value;
+
+                // Check if user exists in local storage
+                const storedUser  = localStorage.getItem(email);
+                if (storedUser ) {
+                    const user = JSON.parse(storedUser );
+                    if (user.password === password) {
+                        alert('Login successful! Welcome back, ' + user.name);
+                        // Redirect to the main page or dashboard
+                        window.location.href = 'home.html'; // Redirect to home.html
+                    } else {
+                        alert('Incorrect password. Please try again.');
+                    }
+                } else {
+                    alert('No account found with this email. Please sign up.');
+                    showSection('signUpForm');
+                }
+            });
+
+            // Handle Reset Password
+            document.getElementById('resetPasswordForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const email = document.getElementById('resetEmail').value;
+                alert(`An OTP has been sent to ${email}. Please check your inbox to reset your password.`);
+                // Here you would typically send the email to your server to handle OTP generation and sending.
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Fitlife - Custom Workout Plans</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .nav-link {
+            font-size: 1.2rem;
+        }
+        .workout-options {
+            max-height: 150px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Header -->
+    <header class="bg-white text-gray-900 shadow-md">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <div class="flex items-center">
+                <img alt="Fitlife logo" class="mr-2" height="40" src="https://storage.googleapis.com/a1aa/image/4Qd2qcOWD1VnQh1Kqn5fa-r7LnFMPqyEiDcE3_xGoVg.jpg" width="40"/>
+                <span class="text-2xl font-bold text-orange-500">Fitlife</span>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a class="text-orange-500 nav-link" href="home.html">Home</a>
+                <a class="hover:text-orange-500 nav-link" href="about.html">About Us</a>
+                <a class="hover:text-orange-500 nav-link" href="workout_plans.html">Workout</a>
+                <a class="hover:text-orange-500 nav-link" href="diet_plans.html">Diet</a>
+                <a class="hover:text-orange-500 nav-link" href="#blog-feed">Blog</a>
+                <a class="hover:text-orange-500 nav-link" href="#"><i class="fas fa-user"></i></a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-16">
+        <h1 class="text-4xl font-bold text-center mb-8">Workout Plans</h1>
+
+        <!-- Workout Duration -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Select Workout Duration</h2>
+            <select id="workoutDuration" class="w-full p-2 rounded bg-gray-800 text-white">
+                <option value="one-day">One Day</option>
+                <option value="one-week">One Week</option>
+                <option value="one-month">One Month</option>
+            </select>
+        </div>
+
+        <!-- Workout Options -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Select Your Workouts</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Strength Training -->
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <h3 class="text-xl font-bold">Strength Training</h3>
+                    <div class="workout-options">
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Bench Press"> Bench Press
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Squats"> Squats
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Deadlifts"> Deadlifts
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Overhead Press"> Overhead Press
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Pull-Ups"> Pull-Ups
+                        </label>
+                    </div>
+                </div>
+                <!-- Cardio -->
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <h3 class="text-xl font-bold">Cardio</h3>
+                    <div class="workout-options">
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Running"> Running
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Cycling"> Cycling
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Jump Rope"> Jump Rope
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Rowing"> Rowing
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="HIIT"> HIIT
+                        </label>
+                    </div>
+                </div>
+                <!-- Flexibility -->
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <h3 class="text-xl font-bold">Flexibility</h3>
+                    <div class="workout-options">
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Yoga"> Yoga
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Pilates"> Pilates
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Dynamic Stretching"> Dynamic Stretching
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Static Stretching"> Static Stretching
+                        </label>
+                    </div>
+                </div>
+                <!-- Bodyweight Exercises -->
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <h3 class="text-xl font-bold">Bodyweight Exercises</h3>
+                    <div class="workout-options">
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Push-Ups"> Push-Ups
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Burpees"> Burpees
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Plank"> Plank
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Lunges"> Lunges
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Workout Entry -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Add Your Own Workout</h2>
+            <input type="text" id="customWorkout" class="w-full p-2 rounded bg-gray-800 text-white" placeholder="Enter your workout item"/>
+            <select id="customWorkoutTime" class="w-full p-2 rounded bg-gray-800 text-white mt-2">
+                <option value="strength">Strength</option>
+                <option value="cardio">Cardio</option>
+                <option value="flexibility">Flexibility</option>
+                <option value="bodyweight">Bodyweight</option>
+            </select>
+            <button class="bg-orange-500 text-white px-4 py-2 rounded-md mt-2" onclick="addCustomWorkout()">Add Workout</button>
+        </div>
+
+        <!-- Generate Workout Plan -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Your Selected Workout Plan</h2>
+            <div id="workoutPlan" class="bg-gray-800 p-4 rounded-lg">
+                <p class="text-gray-400">No workouts selected yet.</p>
+            </div>
+            <button class="bg-orange-500 text-white px-4 py-2 rounded-md mt-4" onclick="generateWorkoutPlan()">Generate Workout Plan</button>
+            <button class="bg-orange-500 text-white px-4 py-2 rounded-md mt-4" onclick="saveWorkoutPlan()">Save Workout Plan</button>
+        </div>
+
+        <!-- Saved Workout Plans -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Saved Workout Plans</h2>
+            <div id="savedWorkoutPlans" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <p class="text-gray-400">No workout plans saved yet.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h2 class="text-2xl font-bold mb-4">Fitlife</h2>
+                <p class="text-gray-400 mb-4">Your partner in achieving fitness goals.</p>
+                <p class="text-gray-400">Monday - Friday<br/>7:00am - 10:00pm</p>
+                <p class="text-gray-400">Saturday - Sunday<br/>7:00am - 2:00pm</p>
+            </div>
+            <div>
+                <h2 class="text-xl font-bold mb-4">Our Links</h2>
+                <ul class="space-y-2">
+                    <li><a class="text-gray-400" href="home.html">Home</a></li>
+                    <li><a class="text-gray-400" href="about.html">About Us</a></li>
+                    <li><a class="text-gray-400" href="workout_plans.html">Workout</a></li>
+                    <li><a class="text-gray-400" href="diet_plans.html">Diet</a></li>
+                    <li><a class="text-gray-400" href="#blog-feed">Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="text-xl font-bold mb-4">Contact Us</h2>
+                <p class="text-gray-400">1247/Plot No. 39, 15th Phase, Colony, Kukatpally, Hyderabad</p>
+                <p class="text-gray-400">1900-123-4567<br/>+91 555 234 8765</p>
+                <p class="text-gray-400">info@fitlife.com<br/>services@fitlife.com</p>
+            </div>
+            <div>
+                <h2 class="text-xl font-bold mb-4">Our Newsletter</h2>
+                <form>
+                    <input class="w-full p-2 mb-4 rounded bg-gray-800 text-white" placeholder="Email Address" type="email"/>
+                    <button class="w-full bg-orange-500 text-white p-2 rounded" type="submit">Subscribe</button>
+                </form>
+                <div class="flex space-x-4 mt-4">
+                    <a class="text-gray-400" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="text-gray-400" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="text-gray-400" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function generateWorkoutPlan() {
+            const duration = document.getElementById('workoutDuration').value;
+
+            // Collect checked items for each workout category separately
+            const strengthItems = Array.from(document.querySelectorAll('input[type="checkbox"][value]:checked')).filter(input => input.closest('.bg-gray-800').querySelector('h3').innerText === 'Strength Training').map(input => input.value);
+            const cardioItems = Array.from(document.querySelectorAll('input[type="checkbox"][value]:checked')).filter(input => input.closest('.bg-gray-800').querySelector('h3').innerText === 'Cardio').map(input => input.value);
+            const flexibilityItems = Array.from(document.querySelectorAll('input[type="checkbox"][value]:checked')).filter(input => input.closest('.bg-gray-800').querySelector('h3').innerText === 'Flexibility').map(input => input.value);
+            const bodyweightItems = Array.from(document.querySelectorAll('input[type="checkbox"][value]:checked')).filter(input => input.closest('.bg-gray-800').querySelector('h3').innerText === 'Bodyweight Exercises').map(input => input.value);
+
+            const customWorkoutItems = Array.from(document.querySelectorAll('.custom-workout')).map(input => input.value);
+
+            const workoutPlan = `
+            Workout Duration: ${duration}
+            Strength: ${strengthItems.join(', ') || 'No items selected'}
+            Cardio: ${cardioItems.join(', ') || 'No items selected'}
+            Flexibility: ${flexibilityItems.join(', ') || 'No items selected'}
+            Bodyweight: ${bodyweightItems.join(', ') || 'No items selected'}
+            Custom Workouts: ${customWorkoutItems.join(', ') || 'No custom workouts added'}
+            `;
+
+            document.getElementById('workoutPlan').innerText = workoutPlan.trim();
+        }
+
+        function addCustomWorkout() {
+            const customWorkoutInput = document.getElementById('customWorkout');
+            const customWorkoutValue = customWorkoutInput.value.trim();
+            const customWorkoutTime = document.getElementById('customWorkoutTime').value;
+
+            if (customWorkoutValue) {
+                const workoutPlanDiv = document.getElementById('workoutPlan');
+                const newWorkoutItem = document.createElement('div');
+                newWorkoutItem.className = 'custom-workout';
+                newWorkoutItem.innerText = `${customWorkoutValue} (${customWorkoutTime})`;
+                workoutPlanDiv.appendChild(newWorkoutItem);
+                customWorkoutInput.value = ''; // Clear input
+            }
+        }
+
+        function saveWorkoutPlan() {
+            const workoutPlan = document.getElementById('workoutPlan').innerText;
+            const savedWorkoutPlans = JSON.parse(localStorage.getItem('savedWorkoutPlans')) || [];
+
+            // Add the new workout plan to the array
+            savedWorkoutPlans.push(workoutPlan);
+
+            // Save the updated array back to localStorage
+            localStorage.setItem('savedWorkoutPlans', JSON.stringify(savedWorkoutPlans));
+
+            alert('Workout plan saved!');
+            window.location.reload(); // Refresh the page to show the updated list
+        }
+
+        function deleteWorkoutPlan(index) {
+            const savedPlans = JSON.parse(localStorage.getItem('savedWorkoutPlans')) || [];
+            savedPlans.splice(index, 1); // Remove the workout plan at the specified index
+            localStorage.setItem('savedWorkoutPlans', JSON.stringify(savedPlans));
+            window.location.reload(); // Refresh the page to update the displayed list
+        }
+
+        window.onload = function () {
+            const savedWorkoutPlans = document.getElementById('savedWorkoutPlans');
+            const savedPlans = JSON.parse(localStorage.getItem('savedWorkoutPlans')) || [];
+
+            if (savedPlans.length > 0) {
+                savedWorkoutPlans.innerHTML = ''; // Clear the default message
+
+                // Loop through saved plans and display them
+                savedPlans.forEach((plan, index) => {
+                    const planDiv = document.createElement('div');
+                    planDiv.className = 'bg-gray-800 p-4 rounded-lg mb-4';
+                    planDiv.innerHTML = `
+                        <h3 class="text-xl font-bold text-orange-500">Workout Plan #${index + 1}</h3>
+                        <pre class="text-gray-400 mt-2">${plan}</pre>
+                        <button class="bg-red-500 text-white px-4 py-2 rounded-md mt-2" onclick="deleteWorkoutPlan(${index})">Delete</button>
+                    `;
+                    savedWorkoutPlans.appendChild(planDiv);
+                });
+            } else {
+                savedWorkoutPlans.innerHTML = '<p class="text-gray-400">No workout plans saved yet.</p>';
+            }
+        };
+    </script>
+</body>
+</html>

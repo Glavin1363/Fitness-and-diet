@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Fitlife -Custom Diet Plans</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        /* Increase font size of nav links */
+        .nav-link {
+            font-size: 1.2rem; /* Adjust as needed */
+        }
+        /* Scrollable meal options */
+        .meal-options {
+            max-height: 150px; /* Set a max height for scrolling */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Header -->
+    <header class="bg-white text-gray-900 shadow-md">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <div class="flex items-center">
+                <img alt="Fitlife logo" class="mr-2" height="40" src="https://storage.googleapis.com/a1aa/image/4Qd2qcOWD1VnQh1Kqn5fa-r7LnFMPqyEiDcE3_xGoVg.jpg" width="40"/>
+                <span class="text-2xl font-bold text-orange-500">Fitlife</span>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a class="text-orange-500 nav-link" href="home.html">Home</a>
+                <a class="hover:text-orange-500 nav-link" href="about.html">About Us</a>
+                <a class="hover:text-orange-500 nav-link" href="workout_plans.html">Workout</a>
+                <a class="hover:text-orange-500 nav-link" href="diet_plans.html">Diet</a>
+                <a class="hover:text-orange-500 nav-link" href="#blog-feed">Blog</a>
+                <a class="hover:text-orange-500 nav-link" href="#"><i class="fas fa-user"></i></a> <!-- Profile Icon -->
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-16">
+        <h1 class="text-4xl font-bold text-center mb-8">Diet Plans</h1>
+
+        <!-- Meal Duration -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Select Meal Duration</h2>
+            <select id="mealDuration" class="w-full p-2 rounded bg-gray-800 text-white">
+                <option value="one-day">One Day</option>
+                <option value="one-week">One Week</option>
+                <option value="one-month">One Month</option>
+            </select>
+        </div>
+
+        <!-- Meal Options -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Select Your Meals</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Breakfast -->
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <h3 class="text-xl font-bold">Breakfast</h3>
+                    <div class="meal-options">
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Oatmeal with fruits"> Oatmeal with fruits
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Scrambled eggs with spinach"> Scrambled eggs with spinach
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Smoothie with protein powder"> Smoothie with protein powder
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Pancakes with syrup"> Pancakes with syrup
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Greek yogurt with honey"> Greek yogurt with honey
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Fruit salad"> Fruit salad
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Avocado toast"> Avocado toast
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Chia seed pudding"> Chia seed pudding
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Breakfast burrito"> Breakfast burrito
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Cereal with milk"> Cereal with milk
+                        </label>
+                    </div>
+                </div>
+                <!-- Lunch -->
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <h3 class="text-xl font-bold">Lunch</h3>
+                    <div class="meal-options">
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Grilled chicken salad"> Grilled chicken salad
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Quinoa with vegetables"> Quinoa with vegetables
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Turkey wrap with lettuce"> Turkey wrap with lettuce
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Pasta primavera"> Pasta primavera
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Vegetable stir-fry"> Vegetable stir-fry
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Chickpea salad"> Chickpea salad
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Sushi rolls"> Sushi rolls
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Lentil soup"> Lentil soup
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Tuna salad"> Tuna salad
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Caprese sandwich"> Caprese sandwich
+                        </label>
+                    </div>
+                </div>
+                <!-- Dinner -->
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <h3 class="text-xl font-bold">Dinner</h3>
+                    <div class="meal-options">
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Baked salmon with asparagus"> Baked salmon with asparagus
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Stir-fried tofu with broccoli"> Stir-fried tofu with broccoli
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Whole grain pasta with marinara sauce"> Whole grain pasta with marinara sauce
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Grilled steak with vegetables"> Grilled steak with vegetables
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Vegetable curry"> Vegetable curry
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Chicken stir-fry"> Chicken stir-fry
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Shrimp tacos"> Shrimp tacos
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Stuffed bell peppers"> Stuffed bell peppers
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Mushroom risotto"> Mushroom risotto
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Baked chicken with sweet potatoes"> Baked chicken with sweet potatoes
+                        </label>
+                    </div>
+                </div>
+                <!-- Snacks -->
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <h3 class="text-xl font-bold">Snacks</h3>
+                    <div class="meal-options">
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Greek yogurt with honey"> Greek yogurt with honey
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Mixed nuts"> Mixed nuts
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Carrot sticks with hummus"> Carrot sticks with hummus
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Apple slices with peanut butter"> Apple slices with peanut butter
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Rice cakes with avocado"> Rice cakes with avocado
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Protein bars"> Protein bars
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Popcorn"> Popcorn
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Dark chocolate"> Dark chocolate
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Cheese and crackers"> Cheese and crackers
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" value="Fruit smoothie"> Fruit smoothie
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Food Entry -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Add Your Own Food</h2>
+            <input type="text" id="customFood" class="w-full p-2 rounded bg-gray-800 text-white" placeholder="Enter your food item"/>
+            <select id="customFoodTime" class="w-full p-2 rounded bg-gray-800 text-white mt-2">
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="snack">Snack</option>
+            </select>
+            <button class="bg-orange-500 text-white px-4 py-2 rounded-md mt-2" onclick="addCustomFood()">Add Food</button>
+        </div>
+
+        <!-- Generate Meal Plan -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Your Selected Meal Plan</h2>
+            <div id="mealPlan" class="bg-gray-800 p-4 rounded-lg">
+                <p class="text-gray-400">No meals selected yet.</p>
+            </div>
+            <button class="bg-orange-500 text-white px-4 py-2 rounded-md mt-4" onclick="generateMealPlan()">Generate Meal Plan</button>
+            <button class="bg-orange-500 text-white px-4 py-2 rounded-md mt-4" onclick="saveMealPlan()">Save Meal Plan</button>
+        </div>
+
+    
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h2 class="text-2xl font-bold mb-4">Fitlife</h2>
+                <p class="text-gray-400 mb-4">Your partner in achieving fitness goals.</p>
+                <p class="text-gray-400">Monday - Friday<br/>7:00am - 10:00pm</p>
+                <p class="text-gray-400">Saturday - Sunday<br/>7:00am - 2:00pm</p>
+            </div>
+            <div>
+                <h2 class="text-xl font-bold mb-4">Our Links</h2>
+                <ul class="space-y-2">
+                    <li><a class="text-gray-400" href="home.html">Home</a></li>
+                    <li><a class="text-gray-400" href="about.html">About Us</a></li>
+                    <li><a class="text-gray-400" href="workout_plans.html">Workout</a></li>
+                    <li><a class="text-gray-400" href="diet_plans.html">Diet</a></li>
+                    <li><a class="text-gray-400" href="#blog-feed">Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="text-xl font-bold mb-4">Contact Us</h2>
+                <p class="text-gray-400">1247/Plot No. 39, 15th Phase, Colony, Kukatpally, Hyderabad</p>
+                <p class="text-gray-400">1900-123-4567<br/>+91 555 234 8765</p>
+                <p class="text-gray-400">info@fitlife.com<br/>services@fitlife.com</p>
+            </div>
+            <div>
+                <h2 class="text-xl font-bold mb-4">Our Newsletter</h2>
+                <form>
+                    <input class="w-full p-2 mb-4 rounded bg-gray-800 text-white" placeholder="Email Address" type="email"/>
+                    <button class="w-full bg-orange-500 text-white p-2 rounded" type="submit">Subscribe</button>
+                </form>
+                <div class="flex space-x-4 mt-4">
+                    <a class="text-gray-400" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="text-gray-400" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="text-gray-400" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function generateMealPlan() {
+    const duration = document.getElementById('mealDuration').value;
+
+    // Collect checked items for each meal category separately
+    const breakfastItems = Array.from(document.querySelectorAll('input[type="checkbox"][value]:checked')).filter(input => input.closest('.bg-gray-800').querySelector('h3').innerText === 'Breakfast').map(input => input.value);
+    const lunchItems = Array.from(document.querySelectorAll('input[type="checkbox"][value]:checked')).filter(input => input.closest('.bg-gray-800').querySelector('h3').innerText === 'Lunch').map(input => input.value);
+    const dinnerItems = Array.from(document.querySelectorAll('input[type="checkbox"][value]:checked')).filter(input => input.closest('.bg-gray-800').querySelector('h3').innerText === 'Dinner').map(input => input.value);
+    const snackItems = Array.from(document.querySelectorAll('input[type="checkbox"][value]:checked')).filter(input => input.closest('.bg-gray-800').querySelector('h3').innerText === 'Snacks').map(input => input.value);
+
+    const customFoodItems = Array.from(document.querySelectorAll('.custom-food')).map(input => input.value);
+
+    const mealPlan = `
+    Meal Duration: ${duration}
+    Breakfast: ${breakfastItems.join(', ') || 'No items selected'}
+    Lunch: ${lunchItems.join(', ') || 'No items selected'}
+    Dinner: ${dinnerItems.join(', ') || 'No items selected'}
+    Snacks: ${snackItems.join(', ') || 'No items selected'}
+    Custom Foods: ${customFoodItems.join(', ') || 'No custom foods added'}
+    `;
+
+    document.getElementById('mealPlan').innerText = mealPlan.trim();
+}
+
+        function addCustomFood() {
+            const customFoodInput = document.getElementById('customFood');
+            const customFoodValue = customFoodInput.value.trim();
+            const customFoodTime = document.getElementById('customFoodTime').value;
+
+            if (customFoodValue) {
+                const mealPlanDiv = document.getElementById('mealPlan');
+                const newFoodItem = document.createElement('div');
+                newFoodItem.className = 'custom-food';
+                newFoodItem.innerText = `${customFoodValue} (${customFoodTime})`;
+                mealPlanDiv.appendChild(newFoodItem);
+                customFoodInput.value = ''; // Clear input
+            }
+        }
+
+        function saveMealPlan() {
+            const mealPlan = document.getElementById('mealPlan').innerText;
+            const savedMealPlans = document.getElementById('savedMealPlans');
+            const newMealPlan = document.createElement('div');
+            newMealPlan.className = 'bg-gray-800 p-4 rounded-lg';
+            newMealPlan.innerHTML = `
+                <h3 class="text-xl font-bold">Saved Meal Plan</h3>
+                <pre class="text-gray-400">${mealPlan}</pre>
+                <button class="bg-orange-500 text-white px-4 py-2 rounded-md mt-4" onclick="removeSavedMealPlan(this)">Remove</button>
+            `;
+            savedMealPlans.appendChild(newMealPlan);
+            localStorage.setItem('savedMealPlans', savedMealPlans.innerHTML);
+        }
+
+        
+        window.onload = function() {
+            const savedMealPlans = document.getElementById('savedMealPlans');
+            const savedMealPlansHTML = localStorage.getItem('savedMealPlans');
+            if (savedMealPlansHTML) {
+                savedMealPlans.innerHTML = savedMealPlansHTML;
+            }
+        };
+    </script>
+</body>
+</html>
