@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Fitlife -Custom Diet Plans</title>
+    <title>Fitlife - Custom Diet Plans</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
@@ -20,6 +20,13 @@
             max-height: 150px; /* Set a max height for scrolling */
             overflow-y: auto; /* Enable vertical scrolling */
         }
+        /* Back button style */
+        .back-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px; /* Space between button and heading */
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-white">
@@ -35,15 +42,21 @@
                 <a class="hover:text-orange-500 nav-link" href="about.html">About Us</a>
                 <a class="hover:text-orange-500 nav-link" href="workout_plans.html">Workout</a>
                 <a class="hover:text-orange-500 nav-link" href="diet_plans.html">Diet</a>
-                <a class="hover:text-orange-500 nav-link" href="#blog-feed">Blog</a>
-                <a class="hover:text-orange-500 nav-link" href="#"><i class="fas fa-user"></i></a> <!-- Profile Icon -->
+                <a class="hover:text-orange-500 nav-link" href="profile.html"><i class="fas fa-user"></i></a> <!-- Profile Icon -->
             </nav>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="container mx-auto px-4 py-16">
-        <h1 class="text-4xl font-bold text-center mb-8">Diet Plans</h1>
+<main class="container mx-auto px-4 py-16">
+    <div class="flex items-center mb-8 justify-between"> <!-- Flex container for heading and back button -->
+        <div class="back-button">
+            <button onclick="window.location.href='diet_plans.html'">
+                <i class="fas fa-arrow-left text-white text-2xl"></i>
+            </button>
+        </div>
+        <h1 class="text-6xl font-bold flex-grow text-center">Diet Plans</h1> <!-- Increased font size and centered -->
+    </div>
 
         <!-- Meal Duration -->
         <div class="mb-8">
@@ -229,7 +242,12 @@
             <button class="bg-orange-500 text-white px-4 py-2 rounded-md mt-4" onclick="saveMealPlan()">Save Meal Plan</button>
         </div>
 
-    
+        <!-- Saved Meal Plans -->
+        <div id="savedMealPlans">
+            <div id="placeholder" class="bg-gray-800 p-4 rounded-lg">
+                <p class="text-gray-400">No saved meal plans yet.</p>
+            </div>
+        </div>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-16">
@@ -273,33 +291,33 @@
 
     <script>
         function generateMealPlan() {
-    const duration = document.getElementById('mealDuration').value;
-
-    // Collect checked items for each meal category separately
-    const breakfastItems = Array.from(document.querySelectorAll('input[type="checkbox"][value]:checked')).filter(input => input.closest('.bg-gray-800').querySelector('h3').innerText === 'Breakfast').map(input => input.value);
-    const lunchItems = Array.from(document.querySelectorAll('input[type="checkbox"][value]:checked')).filter(input => input.closest('.bg-gray-800').querySelector('h3').innerText === 'Lunch').map(input => input.value);
-    const dinnerItems = Array.from(document.querySelectorAll('input[type="checkbox"][value]:checked')).filter(input => input.closest('.bg-gray-800').querySelector('h3').innerText === 'Dinner').map(input => input.value);
-    const snackItems = Array.from(document.querySelectorAll('input[type="checkbox"][value]:checked')).filter(input => input.closest('.bg-gray-800').querySelector('h3').innerText === 'Snacks').map(input => input.value);
-
-    const customFoodItems = Array.from(document.querySelectorAll('.custom-food')).map(input => input.value);
-
-    const mealPlan = `
-    Meal Duration: ${duration}
-    Breakfast: ${breakfastItems.join(', ') || 'No items selected'}
-    Lunch: ${lunchItems.join(', ') || 'No items selected'}
-    Dinner: ${dinnerItems.join(', ') || 'No items selected'}
-    Snacks: ${snackItems.join(', ') || 'No items selected'}
-    Custom Foods: ${customFoodItems.join(', ') || 'No custom foods added'}
-    `;
-
-    document.getElementById('mealPlan').innerText = mealPlan.trim();
-}
-
+            const duration = document.getElementById('mealDuration').value;
+    
+            // Collect checked items for each meal category separately
+            const breakfastItems = Array.from(document.querySelectorAll('input[type="checkbox"][value]:checked')).filter(input => input.closest('.bg-gray-800').querySelector('h3').innerText === 'Breakfast').map(input => input.value);
+            const lunchItems = Array.from(document.querySelectorAll('input[type="checkbox"][value]:checked')).filter(input => input.closest('.bg-gray-800').querySelector('h3').innerText === 'Lunch').map(input => input.value);
+            const dinnerItems = Array.from(document.querySelectorAll('input[type="checkbox"][value]:checked')).filter(input => input.closest('.bg-gray-800').querySelector('h3').innerText === 'Dinner').map(input => input.value);
+            const snackItems = Array.from(document.querySelectorAll('input[type="checkbox"][value]:checked')).filter(input => input.closest('.bg-gray-800').querySelector('h3').innerText === 'Snacks').map(input => input.value);
+    
+            const customFoodItems = Array.from(document.querySelectorAll('.custom-food')).map(input => input.value);
+    
+            const mealPlan = `
+            Meal Duration: ${duration}
+            Breakfast: ${breakfastItems.join(', ') || 'No items selected'}
+            Lunch: ${lunchItems.join(', ') || 'No items selected'}
+            Dinner: ${dinnerItems.join(', ') || 'No items selected'}
+            Snacks: ${snackItems.join(', ') || 'No items selected'}
+            Custom Foods: ${customFoodItems.join(', ') || 'No custom foods added'}
+            `;
+    
+            document.getElementById('mealPlan').innerText = mealPlan.trim();
+        }
+    
         function addCustomFood() {
             const customFoodInput = document.getElementById('customFood');
             const customFoodValue = customFoodInput.value.trim();
             const customFoodTime = document.getElementById('customFoodTime').value;
-
+    
             if (customFoodValue) {
                 const mealPlanDiv = document.getElementById('mealPlan');
                 const newFoodItem = document.createElement('div');
@@ -309,27 +327,90 @@
                 customFoodInput.value = ''; // Clear input
             }
         }
-
+    
         function saveMealPlan() {
             const mealPlan = document.getElementById('mealPlan').innerText;
-            const savedMealPlans = document.getElementById('savedMealPlans');
+            const savedMealPlans = JSON.parse(localStorage.getItem('savedMealPlans')) || []; // Get existing plans or initialize an empty array
+            
+            if (mealPlan.trim() === "No meals selected yet.") {
+                alert("Please generate a meal plan before saving.");
+                return;
+            }
+    
+            // Remove the placeholder container if it exists
+            const placeholder = document.getElementById('placeholder');
+            if (placeholder) {
+                placeholder.remove();
+            }
+    
+            // Add the new meal plan to the array
+            savedMealPlans.push(mealPlan);
+    
+            // Create a new meal plan container
             const newMealPlan = document.createElement('div');
-            newMealPlan.className = 'bg-gray-800 p-4 rounded-lg';
+            newMealPlan.className = 'bg-gray-800 p-4 rounded-lg mb-4';
             newMealPlan.innerHTML = `
                 <h3 class="text-xl font-bold">Saved Meal Plan</h3>
                 <pre class="text-gray-400">${mealPlan}</pre>
                 <button class="bg-orange-500 text-white px-4 py-2 rounded-md mt-4" onclick="removeSavedMealPlan(this)">Remove</button>
             `;
-            savedMealPlans.appendChild(newMealPlan);
-            localStorage.setItem('savedMealPlans', savedMealPlans.innerHTML);
+    
+            // Append the new meal plan to the savedMealPlans div
+            document.getElementById('savedMealPlans').appendChild(newMealPlan);
+    
+            // Save the updated meal plans to localStorage
+            localStorage.setItem('savedMealPlans', JSON.stringify(savedMealPlans));
         }
-
-        
+    
+        function removeSavedMealPlan(button) {
+            const mealPlanDiv = button.parentElement;
+            const mealPlanText = mealPlanDiv.querySelector('pre').innerText;
+    
+            // Get existing plans from localStorage
+            const savedMealPlans = JSON.parse(localStorage.getItem('savedMealPlans')) || [];
+    
+            // Remove the meal plan from the array
+            const updatedMealPlans = savedMealPlans.filter(plan => plan !== mealPlanText);
+    
+            // Update the localStorage
+            localStorage.setItem('savedMealPlans', JSON.stringify(updatedMealPlans));
+    
+            // Remove the meal plan from the DOM
+            mealPlanDiv.remove();
+    
+            // If no saved meal plans are left, restore the placeholder
+            if (updatedMealPlans.length === 0) {
+                const placeholder = document.createElement('div');
+                placeholder.id = 'placeholder';
+                placeholder.className = 'bg-gray-800 p-4 rounded-lg';
+                placeholder.innerHTML = '<p class="text-gray-400">No saved meal plans yet.</p>';
+                document.getElementById('savedMealPlans').appendChild(placeholder);
+            }
+        }
+    
         window.onload = function() {
             const savedMealPlans = document.getElementById('savedMealPlans');
-            const savedMealPlansHTML = localStorage.getItem('savedMealPlans');
-            if (savedMealPlansHTML) {
-                savedMealPlans.innerHTML = savedMealPlansHTML;
+            const savedMealPlansArray = JSON.parse(localStorage.getItem('savedMealPlans')) || [];
+    
+            if (savedMealPlansArray.length > 0) {
+                // If there are saved meal plans, display them
+                savedMealPlansArray.forEach(mealPlan => {
+                    const newMealPlan = document.createElement('div');
+                    newMealPlan.className = 'bg-gray-800 p-4 rounded-lg mb-4';
+                    newMealPlan.innerHTML = `
+                        <h3 class="text-xl font-bold">Saved Meal Plan</h3>
+                        <pre class="text-gray-400">${mealPlan}</pre>
+                        <button class="bg-orange-500 text-white px-4 py-2 rounded-md mt-4" onclick="removeSavedMealPlan(this)">Remove</button>
+                    `;
+                    savedMealPlans.appendChild(newMealPlan);
+                });
+            } else {
+                // If no saved meal plans, show the placeholder
+                savedMealPlans.innerHTML = `
+                    <div id="placeholder" class="bg-gray-800 p-4 rounded-lg">
+                        <p class="text-gray-400">No saved meal plans yet.</p>
+                    </div>
+                `;
             }
         };
     </script>

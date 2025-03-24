@@ -70,15 +70,14 @@
                 <a class="hover:text-orange-500 nav-link" href="about.html">About Us</a>
                 <a class="hover:text-orange-500 nav-link" href="workout_plans.html">Workout</a>
                 <a class="hover:text-orange-500 nav-link" href="diet_plans.html">Diet</a>
-                <a class="hover:text-orange-500 nav-link" href="#blog-feed">Blog</a>
-                <a class="hover:text-orange-500 nav-link" href="#"><i class="fas fa-user"></i></a>
+                <a class="hover:text-orange-500 nav-link" href="profile.html"><i class="fas fa-user"></i></a>
             </nav>
         </div>
     </header>
 
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-16">
-        <h1 class="text-4xl font-bold text-center mb-8">Diet Plans</h1>
+        <h1 class="text-6xl font-bold text-center mb-8">Diet Plans</h1>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="dietPlansGrid">
             <!-- Existing Diet Plans -->
             <!-- Balanced Diet -->
@@ -167,16 +166,19 @@
                 </div>
             </div>
         </div>
+
+        <!-- Button to Create Custom Diet -->
         <div class="text-center mt-8">
             <button class="bg-orange-500 text-white px-6 py-2 rounded-md" onclick="window.location.href='custom_diet.html'">Create Custom Diet</button>
         </div>
 
-        <!-- Custom Meal Plan Section -->
+        <!-- Saved Meal Plans Section -->
         <div class="mt-8">
-            <h2 class="text-2xl font-bold mb-4">Generated Meal Plan</h2>
-            <div id="generatedMealPlan" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
-            <div id="mealPlan" class="bg-gray-800 p-4 rounded-lg mt-4">
-                <p class="text-gray-400">No meal plan generated yet.</p>
+            <h2 class="text-2xl font-bold mb-4">Saved Meal Plans</h2>
+            <div id="savedMealPlans" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div id="placeholder" class="bg-gray-800 p-4 rounded-lg">
+                    <p class="text-gray-400">No saved meal plans yet.</p>
+                </div>
             </div>
         </div>
     </main>
@@ -233,29 +235,39 @@
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        window.onload = function() {
             loadSavedMealPlans();
-        });
+        };
 
-        // Load and display saved meal plans
         function loadSavedMealPlans() {
-            const savedMealPlansDiv = document.getElementById("generatedMealPlan");
-            savedMealPlansDiv.innerHTML = "";
+            const savedMealPlansDiv = document.getElementById("savedMealPlans");
+            const savedPlans = JSON.parse(localStorage.getItem("savedMealPlans")) || [];
 
-            const savedPlans = localStorage.getItem("savedMealPlans");
-            if (savedPlans) {
-                savedMealPlansDiv.innerHTML = savedPlans;
+            // Clear the savedMealPlans section
+            savedMealPlansDiv.innerHTML = '';
+
+            if (savedPlans.length > 0) {
+                // Loop through saved plans and display them
+                savedPlans.forEach((plan, index) => {
+                    const planDiv = document.createElement("div");
+                    planDiv.className = "bg-gray-800 p-4 rounded-lg mb-4";
+                    planDiv.innerHTML = `
+                        <h3 class="text-xl font-bold text-orange-500">Meal Plan #${index + 1}</h3>
+                        <pre class="text-gray-400 mt-2">${plan}</pre>
+                        <button class="bg-red-500 text-white px-4 py-2 rounded-md mt-2" onclick="deleteMealPlan(${index})">Delete</button>
+                    `;
+                    savedMealPlansDiv.appendChild(planDiv);
+                });
             } else {
-                savedMealPlansDiv.innerHTML = "<p class='text-gray-400'>No saved meal plans found.</p>";
+                savedMealPlansDiv.innerHTML = '<div id="placeholder" class="bg-gray-800 p-4 rounded-lg"><p class="text-gray-400">No saved meal plans yet.</p></div>';
             }
         }
 
-        // Delete meal plan
         function deleteMealPlan(index) {
             const savedPlans = JSON.parse(localStorage.getItem("savedMealPlans")) || [];
-            savedPlans.splice(index, 1);
+            savedPlans.splice(index, 1); // Remove the meal plan at the specified index
             localStorage.setItem("savedMealPlans", JSON.stringify(savedPlans));
-            loadSavedMealPlans();
+            loadSavedMealPlans(); // Update the displayed list
         }
     </script>
 </body>

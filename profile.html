@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>User Profile - Fitlife</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        /* Sticky Navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        /* Increase font size of nav links */
+        .nav-link {
+            font-size: 1.2rem; /* Adjust as needed */
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Header -->
+    <header class="bg-white text-gray-900 shadow-md navbar">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <div class="flex items-center">
+                <img alt="Fitlife logo" class="mr-2" height="40" src="https://storage.googleapis.com/a1aa/image/4Qd2qcOWD1VnQh1Kqn5fa-r7LnFMPqyEiDcE3_xGoVg.jpg" width="40"/>
+                <span class="text-2xl font-bold text-orange-500">Fitlife</span>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a class="text-orange-500 nav-link" href="home.html">Home</a>
+                <a class="hover:text-orange-500 nav-link" href="#about-us">About Us</a>
+                <a class="hover:text-orange-500 nav-link" href="workout_plans.html">Workout</a>
+                <a class="hover:text-orange-500 nav-link" href="diet_plans.html">Diet</a>
+                <a class="hover:text-orange-500 nav-link" href="#blog-feed">Blog</a>
+                <a class="hover:text-orange-500 nav-link" href="#"><i class="fas fa-user"></i></a> <!-- Profile Icon -->
+            </nav>
+        </div>
+    </header>
+
+    <!-- User Profile Section -->
+    <main class="container mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center mb-8">User  Profile</h2>
+        <form id="profileForm" class="bg-gray-800 p-6 rounded-lg">
+            <div class="mb-4">
+                <label class="block text-gray-400 mb-2" for="name">Name</label>
+                <input type="text" id="name" class="w-full p-2 rounded bg-gray-700 text-white" placeholder="Enter your name" required />
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-400 mb-2" for="age">Age</label>
+                <input type="number" id="age" class="w-full p-2 rounded bg-gray-700 text-white" placeholder="Enter your age" required />
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-400 mb-2" for="height">Height (cm)</label>
+                <input type="number" id="height" class="w-full p-2 rounded bg-gray-700 text-white" placeholder="Enter your height" required />
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-400 mb-2" for="weight">Weight (kg)</label>
+                <input type="number" id="weight" class="w-full p-2 rounded bg-gray-700 text-white" placeholder="Enter your weight" required />
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-400 mb-2" for="bmi">BMI</label>
+                <input type="text" id="bmi" class="w-full p-2 rounded bg-gray-700 text-white" placeholder="Your BMI will be calculated" disabled />
+            </div>
+            <button type="button" id="saveProfile" class="bg-orange-500 text-white px-6 py-2 rounded-md">Save Profile</button>
+            <button type="button" id="editProfile" class="bg-blue-500 text-white px-6 py-2 rounded-md hidden">Edit Profile</button>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- About Section -->
+            <div>
+                <h2 class="text-2xl font-bold mb-4">Fitlife</h2>
+                <p class="text-gray-400 mb-4">Your partner in achieving fitness goals.</p>
+                <p class="text-gray-400">Monday - Friday<br/>7:00am - 10:00pm</p>
+                <p class="text-gray-400">Saturday - Sunday<br/>7:00am - 2:00pm</p>
+            </div>
+            <!-- Links Section -->
+            <div>
+                <h2 class="text-xl font-bold mb-4">Our Links</h2>
+                <ul class="space-y-2">
+                    <li><a class="text-gray-400" href="home.html">Home</a></li>
+                    <li><a class="text-gray-400" href="about.html">About Us</a></li>
+                    <li><a class="text-gray-400" href="workout_plans.html">Workout</a></li>
+                    <li><a class="text-gray-400" href="diet_plans.html">Diet</a></li>
+                    <li><a class="text-gray-400" href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <!-- Contact Section -->
+            <div>
+                <h2 class="text-xl font-bold mb-4">Contact Us</h2>
+                <p class="text-gray-400">1247/Plot No. 39, 15th Phase, Colony, Kukatpally, Hyderabad</p>
+                <p class="text-gray-400">1900-123-4567<br/>+91 555 234 8765</p>
+                <p class="text-gray-400">info@fitlife.com<br/>services@fitlife.com</p>
+            </div>
+            <!-- Newsletter Section -->
+            <div>
+                <h2 class="text-xl font-bold mb-4">Our Newsletter</h2>
+                <form>
+                    <input class="w-full p-2 mb-4 rounded bg-gray-800 text-white" placeholder="Email Address" type="email"/>
+                    <button class="w-full bg-orange-500 text-white p-2 rounded" type="submit">Subscribe</button>
+                </form>
+                <div class="flex space-x-4 mt-4">
+                    <a class="text-gray-400" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="text-gray-400" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="text-gray-400" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="fixed bottom-4 right-4">
+        <button id="scrollToTop" class="bg-orange-500 text-white p-4 rounded-full shadow-lg">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+
+    <script>
+        const scrollToTopButton = document.getElementById('scrollToTop');
+        scrollToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Load profile data from local storage
+        window.onload = function() {
+            const profileData = JSON.parse(localStorage.getItem('userProfile'));
+            if (profileData) {
+                document.getElementById('name').value = profileData.name;
+                document.getElementById('age').value = profileData.age;
+                document.getElementById('height').value = profileData.height;
+                document.getElementById('weight').value = profileData.weight;
+                document.getElementById('bmi').value = profileData.bmi;
+                document.getElementById('saveProfile').classList.add('hidden');
+                document.getElementById('editProfile').classList.remove('hidden');
+            }
+        };
+
+        // Calculate BMI and save profile
+        document.getElementById('saveProfile').addEventListener('click', function() {
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const height = document.getElementById('height').value;
+            const weight = document.getElementById('weight').value;
+
+            if (name && age && height && weight) {
+                const bmi = (weight / ((height / 100) ** 2)).toFixed(2);
+                document.getElementById('bmi').value = bmi;
+
+                const profileData = {
+                    name: name,
+                    age: age,
+                    height: height,
+                    weight: weight,
+                    bmi: bmi
+                };
+
+                localStorage.setItem('userProfile', JSON.stringify(profileData));
+                alert('Profile saved successfully!');
+                document.getElementById('editProfile').classList.remove('hidden');
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+
+        // Edit profile functionality
+        document.getElementById('editProfile').addEventListener('click', function() {
+            document.getElementById('saveProfile').classList.remove('hidden');
+            document.getElementById('editProfile').classList.add('hidden');
+        });
+    </script>
+</body>
+</html>

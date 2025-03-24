@@ -30,18 +30,25 @@
             </div>
             <nav class="hidden md:flex space-x-6">
                 <a class="text-orange-500 nav-link" href="home.html">Home</a>
-                <a class="hover:text-orange-500 nav-link" href="about.html">About Us</a>
+                <a class="hover:text-orange-500 nav-link" href="#about-us">About Us</a>
                 <a class="hover:text-orange-500 nav-link" href="workout_plans.html">Workout</a>
                 <a class="hover:text-orange-500 nav-link" href="diet_plans.html">Diet</a>
-                <a class="hover:text-orange-500 nav-link" href="#blog-feed">Blog</a>
-                <a class="hover:text-orange-500 nav-link" href="#"><i class="fas fa-user"></i></a>
+                <a class="hover:text-orange-500 nav-link" href="profile.html"><i class="fas fa-user"></i></a>
             </nav>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="container mx-auto px-4 py-16">
-        <h1 class="text-4xl font-bold text-center mb-8">Workout Plans</h1>
+<!-- Main Content -->
+<main class="container mx-auto px-4 py-16">
+    <div class="flex items-center mb-8"> <!-- Flex container for heading and back button -->
+        <div class="back-button mr-4" style="flex: 0 0 auto;"> <!-- Added flex property to keep it on the left -->
+            <button onclick="window.location.href='workout_plans.html'">
+                <i class="fas fa-arrow-left text-white text-2xl"></i>
+            </button>
+        </div>
+        <h1 class="text-6xl font-bold flex-grow text-center">Workout Plans</h1> <!-- Increased font size -->
+    </div>
 
         <!-- Workout Duration -->
         <div class="mb-8">
